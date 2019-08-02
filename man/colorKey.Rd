@@ -5,7 +5,7 @@
 \title{Color key}
 \usage{
 colorKey(values, pal = colorRampPalette(c("red", "gray", "blue"))(24),
-  scale = TRUE)
+  scale = TRUE, na_colour = "gray")
 }
 \arguments{
 \item{values}{vector of numeric values to which colors will be mapped}
@@ -13,6 +13,8 @@ colorKey(values, pal = colorRampPalette(c("red", "gray", "blue"))(24),
 \item{pal}{color palette}
 
 \item{scale}{logical, should values be scaled? Defaults to TRUE}
+
+\item{na_colour}{Colour to be used for NA values}
 }
 \value{
 a vector of colors, mapped to the values and in the same order as the values vector

@@ -2,35 +2,45 @@
 % Please edit documentation in R/crayonmaps.R
 \name{textHeatmap}
 \alias{textHeatmap}
-\title{Text-based heatmap,}
+\title{Text-based heatmap}
 \usage{
 textHeatmap(dat, pal = colorRampPalette(c("red", "gray", "blue"))(24),
   cluster_cols = TRUE, cluster_rows = TRUE,
   dist_method = "euclidean", clustering_method = "complete",
-  main = "Heatmap", key = "Key", show_col_legend = TRUE, lpad = "")
+  main = "Heatmap", key_title = "Key", show_col_legend = TRUE,
+  show_dendro = FALSE, lpad = "")
 }
 \arguments{
-\item{dat}{matrix with numeric values, rownames and colnames}
+\item{dat}{Matrix with numeric values, rownames and colnames}
 
-\item{cluster_cols}{logical, should columns be clustered by hierarchical clustering? default is TRUE}
+\item{pal}{Color palette}
 
-\item{cluster_rows}{logical, should rows be clustered by hierarchical clustering? default is TRUE}
+\item{cluster_cols}{Logical, should columns be clustered by hierarchical clustering? default is TRUE}
 
-\item{dist_method}{character, distance method used by dist}
+\item{cluster_rows}{Logical, should rows be clustered by hierarchical clustering? default is TRUE}
 
-\item{clustering_method}{character, clustering method used by hclust}
+\item{dist_method}{Character, distance method passed to dist}
 
-\item{main}{character, title of the heatmap}
+\item{clustering_method}{Character, clustering method passed to hclust}
 
-\item{key}{character, title of the color legend}
+\item{main}{Character, title of the heatmap}
+
+\item{key_title}{Character, title of the color legend}
 
 \item{show_col_legend}{logical, should the column legend be shown at the end of the plot? default is TRUE}
 
-\item{cols}{color palette}
+\item{show_dendro}{logical, should dendrograms be shown? default is FALSE}
+
+\item{lpad}{character, left padding. Normally white spaces before each line of the heatmap. Default is no white spaces ("")}
 }
 \value{
 a text-based heatmap directly in the terminal output using ANSI background styles. Useful when your X11 forwarding is broken or for quick exploratory analysis of small datasets. Setup is largely inspired by pheatmap.
 }
 \description{
-Text-based heatmap,
+Text-based heatmap
+}
+\author{
+Giuseppe D'Agostino
+
+Alan O'Callaghan
 }
